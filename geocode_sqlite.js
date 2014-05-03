@@ -1,3 +1,9 @@
+/* Much kudos to jclulow for helping.
+ * 
+ */
+
+
+
 var mytable = 'grnbiz';
 var rowheader = ('COMPANY TEXT, ADDRESS TEXT, SECTOR TEXT, STATUS TEXT, LAT INT, LONG INT, CKADDR TEXT');
 
@@ -41,8 +47,9 @@ worker_func(task, next)
 		db.run(query, params, next);
 	};
 
-	var opts = ("google",{"key":"AIzaSyAlL45KShTCX5qg6z0LVJ4ZR2RW5W0VVz4"});
-	geocoder.geocode(task.address, cb1, opts);
+ //	var opts = ("google",{"key":""});
+ //	geocoder.geocode(task.address, cb1, ops );
+	geocoder.geocode(task.address, cb1 );
 }
 
 var QUEUE = mod_vasync.queuev({
